@@ -18,8 +18,12 @@ class User extends Authenticatable
      */
     protected $fillable = [
     'name', 'email', 'password', 'job', 'job_description', 'years_worked', 'age',
-    'reference_name', 'reference_number', 'reference_job_title'
+    'reference_name', 'reference_number', 'reference_job_title', 'address',        'birthdate',
+    'photo',
+
     ];
+
+
 
     /**
      * The attributes that should be hidden for serialization.

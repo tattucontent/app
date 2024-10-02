@@ -25,6 +25,8 @@ return new class extends Migration
             $table->string('reference_name')->nullable();
             $table->string('reference_number')->nullable();
             $table->string('reference_job_title')->nullable();
+            $table->string('reference')->nullable();
+            $table->string('reference_title')->nullable();
             $table->boolean('verified')->default(false); // Add a 'verified' field
             $table->rememberToken();
             $table->timestamps();

@@ -24,5 +24,20 @@ route::get('admin/dashboard',[HomeController::class,'index'])->
 
 Route::get('/admin/verify-user/{id}', [HomeController::class, 'verifyUser'])->name('admin.verify-user');
 Route::get('/admin/unverified-users', [HomeController::class, 'showUnverifiedUsers'])->name('admin.unverified-users');
+Route::post('/profile/complete', [ProfileController::class, 'completeProfile'])->name('profile.complete');
+// Route::post('/profile/complete', [ProfileController::class, 'completeProfile'])->name('profile.complete');
+
+
+
+
+Route::get('/profile/create', [ProfileController::class, 'create'])->name('profile.create');
+Route::post('/profile', [ProfileController::class, 'store'])->name('profile.store');
+Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
+
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+});
 
 

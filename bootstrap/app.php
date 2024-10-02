@@ -14,6 +14,8 @@ return Application::configure(basePath: dirname(__DIR__))
         //
         $middleware->alias([
             'admin'=>\App\Http\Middleware\Admin::class,
+            'ensure.ownership' => \App\Http\Middleware\EnsureUserOwnership::class,
+
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
